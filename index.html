@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LBStudy e-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-white shadow">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold">LBStudy</div>
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          class="w-1/2 px-4 py-2 border rounded"
+        />
+        <div>
+          <button
+            id="add-product-button"
+            class="bg-green-500 text-white py-2 px-4 rounded mr-4"
+          >
+            Agregar Producto
+          </button>
+          <button
+            id="cart-button"
+            class="bg-blue-500 text-white py-2 px-4 rounded"
+          >
+            Carrito (0)
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-gray-200 p-4 rounded mb-8">
+        <p class="text-center font-semibold">Publicita aquí tu producto</p>
+      </div>
+      <h2 class="text-3xl font-bold mb-4">Productos</h2>
+      <div
+        id="product-list"
+        class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
+      ></div>
+      <h2 class="text-3xl font-bold mb-4">Ofertas</h2>
+      <div id="offer-list" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+    </div>
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+      <div class="container mx-auto text-center">
+        &copy; 2024 LBStudy - Todos los derechos reservados
+      </div>
+    </footer>
+    <!-- Modal Agregar Producto -->
+    <div
+      id="add-product-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+    >
+      <div class="bg-white p-8 rounded shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Agregar Nuevo Producto</h2>
+        <form id="add-product-form" class="flex flex-col space-y-4">
+          <input
+            type="text"
+            id="new-product-name"
+            placeholder="Nombre del producto"
+            class="px-4 py-2 border rounded"
+          />
+          <input
+            type="number"
+            id="new-product-price"
+            placeholder="Precio del producto"
+            class="px-4 py-2 border rounded"
+          />
+          <input
+            type="text"
+            id="new-product-image"
+            placeholder="URL de la imagen"
+            class="px-4 py-2 border rounded"
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 text-white py-2 px-4 rounded"
+          >
+            Agregar Producto
+          </button>
+          <button
+            type="button"
+            id="close-add-product"
+            class="bg-red-500 text-white py-2 px-4 rounded"
+          >
+            Cerrar
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal Carrito -->
+    <div
+      id="cart"
+      class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center"
+    >
+      <div class="bg-white p-8 rounded shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Carrito</h2>
+        <ul id="cart-items" class="mb-4"></ul>
+        <button
+          id="checkout-button"
+          class="bg-green-500 text-white py-2 px-4 rounded"
+        >
+          Comprar
+        </button>
+        <button
+          id="close-cart"
+          class="ml-4 bg-red-500 text-white py-2 px-4 rounded"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
